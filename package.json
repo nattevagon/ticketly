@@ -1,0 +1,44 @@
+{
+  "name": "ticketly",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack --port 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@editorjs/checklist": "^1.6.0",
+    "@editorjs/editorjs": "^2.31.0",
+    "@editorjs/header": "^2.8.8",
+    "@editorjs/image": "^2.10.3",
+    "@editorjs/list": "^2.0.8",
+    "@editorjs/paragraph": "^2.11.7",
+    "@editorjs/quote": "^2.7.6",
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "axios": "^1.7.9",
+    "dompurify": "^3.2.6",
+    "editorjs-paragraph-with-alignment": "^3.0.0",
+    "editorjs-react-renderer": "^3.5.1",
+    "heroicons": "^2.2.0",
+    "moment": "^2.30.1",
+    "next": "15.1.6",
+    "react": "^19.0.0",
+    "react-calendar": "^6.0.0",
+    "react-datepicker": "^8.7.0",
+    "react-dom": "^19.0.0",
+    "swiper": "^11.2.2",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.23",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17"
+  }
+}
