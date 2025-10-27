@@ -10,7 +10,7 @@ const NavigationDrawer = () => {
         {/* Page content here */}
         <label htmlFor="my-drawer-4" className="drawer-button">
           <Bars3Icon
-            className="w-[2rem] lg:hidden h-[2rem] cursor-pointer text-primary-black dark:text-primary-white"
+            className="w-[2rem] lg:hidden h-[2rem] cursor-pointer text-primary-white"
           />
         </label>
       </div>

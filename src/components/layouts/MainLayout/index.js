@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import Footer from "@/components/molecules/Footer";
-import NavigationSection from "@/components/molecules/NavigationSection";
+import Navigation from "@/components/molecules/Navigation";
 
 const MainLayout = ({ children }) => {
   const [isTopTeamsList, setTopTeamsList] = useState(true)
 
   return (
     <div className="overflow-y-auto h-screen">
-      <NavigationSection
+      <Navigation
         isTopTeamsList={isTopTeamsList}
         onSetTopTeamsList={(value) => setTopTeamsList(value)}
       />

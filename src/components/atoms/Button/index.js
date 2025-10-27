@@ -3,9 +3,9 @@ import React from "react";
 
 const Button = ({ href, onClick, icon: Icon, label, disabled, className = "", labelClassName = "", iconClassName = "" }) => {
   console.log(Icon)
-  const baseClasses = "hover:opacity-75 size-fit cursor-pointer disabled:opacity-75 disabled:cursor-wait !no-underline" + (className ? ' ' + className : '');
+  const baseClasses = "flex items-center justify-center" + (className ? ' ' + className : '');
   const content = (
-    <div className={"flex px-4 py-2 items-center" + (label ? ' gap-2' : ' justify-center')}>
+    <div className={"flex px-4 py-2 items-center" + (label ? ' gap-2' : ' justify-center') + " " + baseClasses}>
       {Icon && <Icon className={"h-[24px] cursor-pointer text-primary-white" + (iconClassName ? " " + iconClassName : "")} />}
       <div className={"text-primary-white text-[16px] font-medium" + (labelClassName ? ' ' + labelClassName : '')}>{label}</div>
     </div>
@@ -13,7 +13,7 @@ const Button = ({ href, onClick, icon: Icon, label, disabled, className = "", la
 
   if (href) {
     return (
-      <Link href={href} className={baseClasses}>
+      <Link href={href} className="hover:opacity-75 size-fit cursor-pointer disabled:opacity-75 disabled:cursor-wait !no-underline">
         {content}
       </Link>
     );

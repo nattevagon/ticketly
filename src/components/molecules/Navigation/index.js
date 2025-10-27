@@ -8,7 +8,7 @@ import 'swiper/css';
 import { TicketlyIcon } from "@/assets/images/logos";
 import Button from "@/components/atoms/Button";
 
-function NavigationSection({ isTopTeamsList, onSetTopTeamsList }) {
+function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
   useEffect(() => {
     const element = document.querySelector('#topTeamsList');
 
@@ -29,7 +29,7 @@ function NavigationSection({ isTopTeamsList, onSetTopTeamsList }) {
 
   return (
     <div className="w-full">
-      <div id="topTeamsList" className="bg-slate-700 w-full hidden lg:block">
+      <div id="topTeamsList" className="bg-slate-700 w-full">
         <div className="container">
           <div className="hidden lg:flex text-primary-white py-2 text-[12px] items-center justify-center gap-4">
             <Link
@@ -51,7 +51,7 @@ function NavigationSection({ isTopTeamsList, onSetTopTeamsList }) {
           </div>
         </div>
       </div>
-      <div className={"bg-gradient-to-r from-slate-900 to-slate-700 w-full z-[2]" + (isTopTeamsList ? '' : ' fixed top-0')}>
+      <div className={"bg-gradient-to-r from-slate-900 to-slate-700 w-full h-[64px] flex items-center justify-center z-[2]" + (isTopTeamsList ? '' : ' fixed top-0')}>
         <div className="container flex items-center justify-between">
           <div className="w-[138px] h-[auto]">
             <Image
@@ -62,19 +62,17 @@ function NavigationSection({ isTopTeamsList, onSetTopTeamsList }) {
               alt="Logo"
             />
           </div>
-          <div className="flex items-center w-full justify-end">
-            <div className="flex items-center justify-between gap-2 px-4 py-2">
+          <div className="hidden lg:flex items-center w-full justify-end">
+            <div className="flex items-center justify-between gap-2">
               <Button
                 className="bg-slate-600 rounded-lg"
                 href={`/login`}
                 label="Login"
-                labelClassName="hidden lg:block"
               />
               <Button
                 className="border-[1px] border-slate-400 rounded-lg"
                 href={`/register`}
                 label="Sign Up"
-                labelClassName="hidden lg:block"
               />
             </div>
           </div>
@@ -85,4 +83,4 @@ function NavigationSection({ isTopTeamsList, onSetTopTeamsList }) {
   )
 }
 
-export default NavigationSection
+export default Navigation
