@@ -233,3 +233,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 input[type="time"]::-webkit-inner-spin-button {
   @apply hidden;
 }
+
+/* Input */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-spinner {
+  -moz-appearance: textfield;
+}

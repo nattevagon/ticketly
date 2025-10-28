@@ -16,7 +16,8 @@ const TextField = ({
   disabled = false,
   isTimePicker = false
 }) => {
-  let baseClass = `w-full text-[16px] p-2 input input-bordered bg-secondary-white dark:bg-secondary-black rounded-none border-third-white dark:border-third-black placeholder-third-black dark:placeholder-third-white ${className}`;
+  let baseClass = `w-full text-[16px] px-4 py-2 input input-bordered rounded-xl bg-secondary-white dark:bg-secondary-black rounded-none border-third-white dark:border-third-black placeholder-third-black dark:placeholder-third-white no-spinner ${className}`;
+  const baseLabel = "text-md font-semibold"
   const [showPassword, setShowPassword] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectSearch, setSelectSearch] = useState("");
@@ -46,7 +47,7 @@ const TextField = ({
   if (type === "textarea") {
     return (
       <div className="form-control w-full text-primary-black dark:text-primary-white">
-        {label && <label className="label">{label}</label>}
+        {label && <label className={"label" + (baseLabel ? " " + baseLabel : "")}>{label}</label>}
         <textarea
           name={name}
           value={value}
@@ -88,7 +89,7 @@ const TextField = ({
         ref={wrapperRef}
         className="form-control w-full text-primary-black dark:text-primary-white relative"
       >
-        {label && <label className="label">{label}</label>}
+        {label && <label className={"label" + (baseLabel ? " " + baseLabel : "")}>{label}</label>}
         {/* <div
           className={`cursor-pointer flex items-center ${baseClass}` +
             (value === "" ? " text-third-black dark:text-third-white" : "")
@@ -114,7 +115,7 @@ const TextField = ({
         />
 
         {showDropdown && (
-          <ul className="absolute top-full left-0 mt-2 w-full border border-third-white dark:border-third-black bg-secondary-white dark:bg-secondary-black shadow-lg z-50 max-h-60 overflow-y-auto">
+          <ul className="absolute top-full left-0 mt-2 w-full border border-third-white dark:border-third-black bg-secondary-white dark:bg-secondary-black shadow-lg z-50 max-h-60 overflow-y-auto rounded-lg">
             <li
               onClick={() => {
                 onChange({ target: { name, value: "" } });
@@ -155,7 +156,7 @@ const TextField = ({
   else {
     return (
       <div className="form-control w-full text-primary-black dark:text-primary-white">
-        {label && <label className="label">{label}</label>}
+        {label && <label className={"label" + (baseLabel ? " " + baseLabel : "")}>{label}</label>}
 
         <div className="relative">
           <input
@@ -168,6 +169,9 @@ const TextField = ({
               if (type === "number" && (e.key === "-" || e.key === "Subtract")) {
                 e.preventDefault();
               }
+              if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+                e.preventDefault();
+              }
               onKeyDown && onKeyDown(e);
             }}
             onInput={(e) => {
@@ -175,6 +179,7 @@ const TextField = ({
                 e.target.value = e.target.value.replace("-", "");
               }
             }}
+            onWheel={(e) => e.target.blur()}
             className={baseClass}
             disabled={disabled}
           />

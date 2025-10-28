@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import PaymentLayout from "@/components/layouts/PaymentLayout";
 import { ChevronRightIcon, ShoppingBagIcon } from "@heroicons/react/20/solid";
 import { Pagination, Scrollbar, A11y } from 'swiper/modules';
@@ -8,8 +8,18 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 import Image from "next/image";
 import Button from "@/components/atoms/Button";
+import PaymentStep from "@/components/molecules/PaymentStep";
+import { useRouter } from "next/router";
 
 const tickets = [
+  {
+    id: 0,
+    title: "VIP TICKET",
+    description: "Grab it fast!!",
+    price: 230000,
+    status: "On Sale",
+    max: 6,
+  },
   {
     id: 1,
     title: "COUPLE TICKET",
@@ -33,10 +43,50 @@ const tickets = [
     price: 70000,
     status: "Sold Out",
   },
+  {
+    id: 4,
+    title: "EARLYBIRD 2",
+    price: 80000,
+    status: "Sold Out",
+  },
+  {
+    id: 5,
+    title: "EARLYBIRD 3",
+    price: 90000,
+    status: "Sold Out",
+  }
 ];
 
 const Ticket = () => {
-  const [quantities, setQuantities] = useState([]); // bentuk: [{ id, qty }]
+  const router = useRouter();
+  const ticketCategoryRef = useRef(null);
+  const paymentStepRef = useRef(null);
+  const { asPath, query } = router;
+  const { id } = query;
+  const eventDetailPath = asPath.split("/ticket")[0];
+  const [quantities, setQuantities] = useState([]);
+  const [isTopSummaryOrder, setTopSummaryOrder] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setTopSummaryOrder(!entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+        rootMargin: "-64px 0px 0px 0px",
+      }
+    );
+
+    if (paymentStepRef.current) {
+      observer.observe(paymentStepRef.current);
+    }
+
+    return () => {
+      if (paymentStepRef.current) observer.unobserve(paymentStepRef.current);
+    };
+  }, []);
+
 
   const handleAdd = (id) => {
     setQuantities((prev) => {
@@ -85,39 +135,22 @@ const Ticket = () => {
     return { selected, subtotal, totalTickets };
   }, [quantities]);
 
+  // const handleToChooseTicket = () => {
+  //   ticketCategoryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  // }
+
+  console.log('isTop', isTopSummaryOrder)
+  console.log('isTop', isTopSummaryOrder)
+
   return (
-    <div className="container py-8">
+    <div className="container pb-8">
       {/* STEP NAVIGATION */}
-      <div className="flex items-center justify-center gap-4 pb-4">
-        <div className="flex items-center gap-2 text-[16px]">
-          <div className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center font-semibold">
-            1
-          </div>
-          <div className="font-medium text-primary-black">Choose Category</div>
-        </div>
-        <ChevronRightIcon className="w-6 h-6 text-gray-500" />
-        <div className="flex items-center gap-2 text-[16px]">
-          <div className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center font-semibold">
-            2
-          </div>
-          <div className="font-medium text-primary-black">Order Detail</div>
-        </div>
-        <ChevronRightIcon className="w-6 h-6 text-gray-500" />
-        <div className="flex items-center gap-2 text-[16px]">
-          <div className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center font-semibold">
-            3
-          </div>
-          <div className="font-medium text-primary-black">Payment Method</div>
-        </div>
-        <ChevronRightIcon className="w-6 h-6 text-gray-500" />
-        <div className="flex items-center gap-2 text-[16px]">
-          <div className="bg-slate-800 text-white rounded-full w-6 h-6 flex items-center justify-center font-semibold">
-            4
-          </div>
-          <div className="font-medium text-primary-black">Payment</div>
-        </div>
+      <div ref={paymentStepRef} className="pt-8 pb-4">
+        <PaymentStep
+          page={'ticket'}
+        />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* LEFT: Ticket List */}
         <div className="col-span-1 lg:col-span-2 flex flex-col mt-6 lg:mt-0 order-1">
           <div className="bg-secondary-white dark:bg-secondary-black rounded-xl">
@@ -154,8 +187,8 @@ const Ticket = () => {
             </div>
           </div>
           {/* Ticket List */}
-          <div className="bg-secondary-white dark:bg-secondary-black p-4 flex flex-col gap-2 mt-4 text-primary-black rounded-xl">
-            <div className="text-md font-bold">Category</div>
+          <div ref={ticketCategoryRef} className="bg-secondary-white dark:bg-secondary-black p-4 flex flex-col gap-2 mt-4 text-primary-black rounded-xl">
+            <div className="text-lg font-bold">Category</div>
             <div className="mt-2 text-sm text-primary-gray">
               <div className="flex flex-col gap-4">
                 {tickets.map((ticket) => {
@@ -246,76 +279,64 @@ const Ticket = () => {
           </div>
         </div>
         {/* RIGHT: Order Detail */}
-        <div className="col-span-1 order-2">
-          {orderDetails.selected.length === 0 ? (
+        <div className="col-span-1 order-2 relative">
+          <div className={"w-full flex flex-col gap-4" + (isTopSummaryOrder ? ' lg:sticky lg:top-[80px]' : '')}>
+            {orderDetails.selected.length !== 0 && (
+              <div className="bg-secondary-white dark:bg-secondary-black p-4 rounded-xl flex flex-col gap-2 text-primary-black">
+                <div className="flex items-center gap-2">
+                  <ShoppingBagIcon className="h-[20px] w-[20px] inline-block" />
+                  <div className="text-lg font-bold">Detail Order</div>
+                </div>
+                <div className="flex flex-col gap-2 mt-2 text-sm text-primary-gray">
+                  {orderDetails.selected.map((t) => {
+                    const qty = quantities.find((q) => q.id === t.id)?.qty || 0;
+                    return (
+                      <div key={t.id} className="flex justify-between mb-1">
+                        <div>
+                          <p className="font-medium text-gray-700">{t.title}</p>
+                          <p className="text-sm text-gray-500">
+                            x{qty}{" "}
+                            <span className="text-gray-400">
+                              (Rp{t.price.toLocaleString("id-ID")})
+                            </span>
+                          </p>
+                        </div>
+                        <p className="font-semibold">
+                          Rp{(t.price * qty).toLocaleString("id-ID")}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
             <div className="w-full bg-secondary-white dark:bg-secondary-black p-4 rounded-xl">
-              <div className="flex flex-col gap-2 text-primary-black">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="text-md text-primary-gray font-semibold">
-                    Start from
-                  </div>
-                  <div className="text-lg text-primary-black font-bold">
-                    IDR 150.000
-                  </div>
+              <div className="flex items-center justify-between gap-2">
+                <div className="text-md text-primary-black font-semibold">
+                  {orderDetails.selected.length === 0 ?
+                    'Start from'
+                    :
+                    `Total (${orderDetails.totalTickets} Ticket)`
+                  }
+                </div>
+                <div className="text-lg text-primary-black font-bold">
+                  {orderDetails.selected.length === 0 ?
+                    'Rp70.000'
+                    :
+                    `Rp${orderDetails.subtotal.toLocaleString("id-ID")}`
+                  }
                 </div>
               </div>
               <div className="mt-4">
                 <Button
+                  href={`/${eventDetailPath}/order`}
                   label="Book Now"
                   className="bg-slate-900 rounded-lg w-full"
+                  disabled={orderDetails.selected.length === 0}
                 />
               </div>
             </div>
-          ) : (
-            <div>
-              <div className="w-full bg-secondary-white dark:bg-secondary-black p-4 rounded-xl">
-                <div className="flex flex-col gap-2 text-primary-black">
-                  <div className="flex items-center gap-2">
-                    <ShoppingBagIcon className="h-[20px] w-[20px] inline-block" />
-                    <div className="text-lg font-bold">Detail Order</div>
-                  </div>
-
-                  <div className="flex flex-col gap-2 mt-2 text-sm text-primary-gray">
-                    {orderDetails.selected.map((t) => {
-                      const qty = quantities.find((q) => q.id === t.id)?.qty || 0;
-                      return (
-                        <div key={t.id} className="flex justify-between mb-1">
-                          <div>
-                            <p className="font-medium text-gray-700">{t.title}</p>
-                            <p className="text-sm text-gray-500">
-                              x{qty}{" "}
-                              <span className="text-gray-400">
-                                (Rp{t.price.toLocaleString("id-ID")})
-                              </span>
-                            </p>
-                          </div>
-                          <p className="font-semibold">
-                            Rp{(t.price * qty).toLocaleString("id-ID")}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-              <div className="w-full bg-secondary-white dark:bg-secondary-black p-4 rounded-xl mt-4">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="text-md text-primary-gray font-semibold">
-                    Total ({orderDetails.totalTickets} Ticket)
-                  </div>
-                  <div className="text-lg text-primary-black font-bold">
-                    Rp{orderDetails.subtotal.toLocaleString("id-ID")}
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <Button
-                    label="Beli Sekarang"
-                    className="bg-slate-900 rounded-lg w-full"
-                  />
-                </div>
-              </div>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
