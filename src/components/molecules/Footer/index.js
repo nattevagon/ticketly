@@ -1,4 +1,4 @@
-import { TicketlyIcon } from "@/assets/images/logos"
+import { TiketlyIcon } from "@/assets/images/logos"
 import Image from "next/image"
 import React from 'react'
 
@@ -28,7 +28,7 @@ const Footer = () => {
       </footer>
       <Image
         className="invert brightness-0 mb-2 ml-4"
-        src={TicketlyIcon.src}
+        src={TiketlyIcon.src}
         width={100}
         height={100}
         alt="LeagueLogo"

@@ -1,5 +1,5 @@
-import TicketlyIcon from './ticketly.webp';
+import TiketlyIcon from './tiketly.webp';
 
 export {
-    TicketlyIcon
+    TiketlyIcon
 }

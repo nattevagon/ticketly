@@ -5,7 +5,7 @@ import NavigationDrawer from "../MobileDrawer"
 import { A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { TicketlyIcon } from "@/assets/images/logos";
+import { TiketlyIcon } from "@/assets/images/logos";
 import Button from "@/components/atoms/Button";
 
 function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
@@ -57,7 +57,7 @@ function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
             <Link href="/">
               <Image
                 className="w-[138px] h-auto"
-                src={TicketlyIcon.src}
+                src={TiketlyIcon.src}
                 width={138}
                 height={0}
                 alt="Logo"
