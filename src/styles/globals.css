@@ -10,8 +10,18 @@
     background-color: transparent;
 }
 
+html,
 body {
-    font-family: "Montserrat", serif;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+  font-family: "Montserrat", serif;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Drawer fix */

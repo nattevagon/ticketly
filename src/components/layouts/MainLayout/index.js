@@ -6,7 +6,7 @@ const MainLayout = ({ children }) => {
   const [isTopTeamsList, setTopTeamsList] = useState(true)
 
   return (
-    <div className="overflow-y-auto h-screen">
+    <div className="overflow-y-auto min-h-screen">
       <Navigation
         isTopTeamsList={isTopTeamsList}
         onSetTopTeamsList={(value) => setTopTeamsList(value)}
