@@ -3,7 +3,7 @@ import React from 'react'
 
 const PaymentLayout = ({ children }) => {
   return (
-    <div className="overflow-y-auto h-screen">
+    <div className="overflow-y-auto min-h-screen">
       <PaymentNavigation />
       <div className="pt-[58px] lg:pt-[64px]">
         {children}
