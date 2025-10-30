@@ -65,7 +65,7 @@ export default function PostRender({ content }) {
           case "image": {
             const { file, caption, withBorder, withBackground, stretched } = block?.data || {};
             const classNames = [
-              "rounded-lg object-contain",
+              "rounded-xl object-contain",
               withBorder ? "border" : "",
               withBackground ? "bg-gray-100 p-2" : "",
               stretched ? "w-full" : "max-h-96",

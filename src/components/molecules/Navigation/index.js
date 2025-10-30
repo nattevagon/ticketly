@@ -54,23 +54,25 @@ function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
       <div className={"bg-gradient-to-r from-slate-900 to-slate-700 w-full h-[64px] flex items-center justify-center z-[2]" + (isTopTeamsList ? '' : ' fixed top-0')}>
         <div className="container flex items-center justify-between">
           <div className="w-[138px] h-[auto]">
-            <Image
-              className="w-[138px] h-auto"
-              src={TicketlyIcon.src}
-              width={138}
-              height={0}
-              alt="Logo"
-            />
+            <Link href="/">
+              <Image
+                className="w-[138px] h-auto"
+                src={TicketlyIcon.src}
+                width={138}
+                height={0}
+                alt="Logo"
+              />
+            </Link>
           </div>
           <div className="hidden lg:flex items-center w-full justify-end">
             <div className="flex items-center justify-between gap-2">
               <Button
-                className="bg-slate-600 rounded-lg"
+                className="bg-slate-600 rounded-xl"
                 href={`/login`}
                 label="Login"
               />
               <Button
-                className="border-[1px] border-slate-400 rounded-lg"
+                className="border-[1px] border-slate-400 rounded-xl"
                 href={`/register`}
                 label="Sign Up"
               />

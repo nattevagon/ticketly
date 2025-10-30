@@ -115,7 +115,7 @@ const TextField = ({
         />
 
         {showDropdown && (
-          <ul className="absolute top-full left-0 mt-2 w-full border border-third-white dark:border-third-black bg-secondary-white dark:bg-secondary-black shadow-lg z-50 max-h-60 overflow-y-auto rounded-lg">
+          <ul className="absolute top-full left-0 mt-2 w-full border border-third-white dark:border-third-black bg-secondary-white dark:bg-secondary-black shadow-lg z-50 max-h-60 overflow-y-auto rounded-xl">
             <li
               onClick={() => {
                 onChange({ target: { name, value: "" } });

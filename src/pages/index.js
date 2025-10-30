@@ -67,7 +67,7 @@ const Home = () => {
       <div className="container">
         <HomeBanner />
       </div>
-      <div className="bg-gradient-to-r from-slate-900 to-slate-700 my-8 py-4">
+      <div className="bg-gradient-to-r from-slate-900 to-slate-700 my-8 py-6">
         <div className="container">
           <h1 className="flex justify-between items-center">
             <div className="text-2xl font-bold text-white">Top Event</div>
@@ -79,10 +79,10 @@ const Home = () => {
               spaceBetween={16}
               slidesPerView={3}
               loop={true}
-              autoplay={{
-                delay: 2000, // Delay between slides in milliseconds
-                disableOnInteraction: false, // Set to false to prevent autoplay from stopping on user interaction
-              }}
+              // autoplay={{
+              //   delay: 2000, // Delay between slides in milliseconds
+              //   disableOnInteraction: false, // Set to false to prevent autoplay from stopping on user interaction
+              // }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log('slide change')}
             >

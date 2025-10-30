@@ -65,7 +65,7 @@ const DetailEvent = () => {
         />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="col-span-2 w-full flex flex-col mt-6 lg:mt-0 order-1 lg:order-1">
+        <div className="col-span-2 w-full flex flex-col order-1 lg:order-1">
           <div className="bg-secondary-white dark:bg-secondary-black rounded-xl">
             {/* <Image
               src="https://assets.artatix.co.id/event/68a1729e3507b-WebBannerBYF4.png"
@@ -205,7 +205,7 @@ const DetailEvent = () => {
               <Button
                 href={`${asPath}/ticket`}
                 label="Book Now"
-                className="bg-slate-900 rounded-lg w-full"
+                className="bg-slate-900 rounded-xl w-full"
               />
             </div>
           </div>

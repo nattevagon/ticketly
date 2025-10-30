@@ -39,8 +39,8 @@ module.exports = {
     container: {
       center: true, // Center the container by default
       padding: {
-        DEFAULT: '2rem', // Default padding untuk semua breakpoint
-        md: '4rem', // Padding khusus untuk breakpoint md (768px)
+        DEFAULT: '16px', // Default padding untuk semua breakpoint
+        md: '16px', // Padding khusus untuk breakpoint md (768px)
       },
       screens: {
         'xs': '440px',
