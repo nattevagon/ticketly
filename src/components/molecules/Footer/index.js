@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div id="basicFooter" className="container bg-gradient-to-r from-slate-900 to-slate-700 w-full max-w-none">
+    <div id="basicFooter" className="container bg-gradient-to-r from-slate-900 to-slate-700 w-full max-w-none pb-[92px] lg:pb-0">
       <div className="flex items-center justify-center px-4 py-8">
         <Image
           className="invert brightness-0 w-[100px] lg:w-[160px]"
