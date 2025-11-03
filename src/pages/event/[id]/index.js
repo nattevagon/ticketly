@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Badge from "@/components/atoms/Badge";
 import Breadcrumb from "@/components/atoms/Breadcrumb";
 import Button from "@/components/atoms/Button";
@@ -14,6 +14,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
+import MobileButtonArea from "@/components/molecules/MobileButtonArea";
 
 const DetailEvent = () => {
   const router = useRouter();
@@ -65,7 +66,7 @@ const DetailEvent = () => {
         />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="col-span-2 w-full flex flex-col order-1 lg:order-1">
+        <div className="col-span-1 lg:col-span-2 w-full flex flex-col order-1 lg:order-1">
           <div className="bg-secondary-white dark:bg-secondary-black rounded-xl">
             {/* <Image
               src="https://assets.artatix.co.id/event/68a1729e3507b-WebBannerBYF4.png"
@@ -125,7 +126,7 @@ const DetailEvent = () => {
           </div>
           <div className="bg-secondary-white dark:bg-secondary-black p-4 flex flex-col gap-2 mt-4 text-primary-black rounded-xl">
             <div className="text-md font-bold">Line Up</div>
-            <div className="grid grid-cols-2 mt-2 gap-4 text-sm text-primary-gray">
+            <div className="grid grid-cols-1 lg:grid-cols-2 mt-2 gap-4 text-sm text-primary-gray">
               <Link href="https://www.instagram.com/" className="flex items-center gap-4 shadow-sm p-2 border-[1px] border-primary-gray rounded-xl transform transition duration-300 hover:scale-[1.04] cursor-pointer">
                 <Image
                   src="https://ypassets.yesplis.com/251022/assets/285be1fd-1034-4528-b6cc-cce7e6495eda.jpeg"
@@ -146,9 +147,9 @@ const DetailEvent = () => {
                 />
                 <div className="text-primary-black text-sm font-bold">Afgan</div>
               </Link>
-               <Link href="https://www.instagram.com/" className="flex items-center gap-4 shadow-sm p-2 border-[1px] border-primary-gray rounded-xl transform transition duration-300 hover:scale-[1.04] cursor-pointer">
+              <Link href="https://www.instagram.com/" className="flex items-center gap-4 shadow-sm p-2 border-[1px] border-primary-gray rounded-xl transform transition duration-300 hover:scale-[1.04] cursor-pointer">
                 <Image
-                  src="https://ypassets.yesplis.com/251022/assets/63f2f7f0-4e51-4b8c-a6c5-d5dfa6f61e80.jpeg"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc5Yl8Pp4EROxDfiirlFYM_HS7bxdQrTMjhfsZy0wd0MU0rNMolWF2cKo5AoCPEL6mvVoX-e-xjii1NZtdF10OeS3z9RV4PQWr99-NIKmZQQ&s=10"
                   width={80}
                   height={80}
                   alt="Recommendation"
@@ -156,7 +157,7 @@ const DetailEvent = () => {
                 />
                 <div className="text-primary-black text-sm font-bold">Pamungkas</div>
               </Link>
-               <Link href="https://www.instagram.com/" className="flex items-center gap-4 shadow-sm p-2 border-[1px] border-primary-gray rounded-xl transform transition duration-300 hover:scale-[1.04] cursor-pointer">
+              <Link href="https://www.instagram.com/" className="flex items-center gap-4 shadow-sm p-2 border-[1px] border-primary-gray rounded-xl transform transition duration-300 hover:scale-[1.04] cursor-pointer">
                 <Image
                   src="https://ypassets.yesplis.com/251022/assets/4aab3a08-9944-47b7-9148-f5bd4cae1647.jpeg"
                   width={80}
@@ -169,7 +170,7 @@ const DetailEvent = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-1 w-full order-2 lg:order-2">
+        <div className="col-span-1 w-full order-2 lg:order-2 flex flex-col gap-4">
           <div className="w-full bg-secondary-white dark:bg-secondary-black p-4 rounded-xl">
             <div className="flex flex-col gap-2 text-primary-black">
               <div className="flex flex-col gap-2 mt-2 text-sm text-primary-gray font-medium">
@@ -194,7 +195,7 @@ const DetailEvent = () => {
               </div>
             </div>
           </div>
-          <div className="w-full bg-secondary-white dark:bg-secondary-black p-4 rounded-xl mt-4">
+          <MobileButtonArea className="w-full bg-secondary-white dark:bg-secondary-black p-4">
             <div className="flex flex-col gap-2 text-primary-black">
               <div className="flex items-center justify-between gap-2">
                 <div className="text-md text-primary-gray font-semibold">Start from</div>
@@ -208,7 +209,7 @@ const DetailEvent = () => {
                 className="bg-slate-900 rounded-xl w-full"
               />
             </div>
-          </div>
+          </MobileButtonArea>
         </div>
       </div>
     </div>

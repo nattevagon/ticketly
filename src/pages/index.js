@@ -76,7 +76,7 @@ const Home = () => {
             <Swiper
               className="rounded-xl"
               modules={[Autoplay, Scrollbar, A11y]}
-              spaceBetween={16}
+              spaceBetween={32}
               slidesPerView={3}
               loop={true}
               // autoplay={{
@@ -96,7 +96,7 @@ const Home = () => {
                       className="rounded-xl"
                       src={news.image_url}
                       width={400}
-                      height={360}
+                      height={0}
                       alt="Image"
                     />
                     {/* <div className="my-2 text-lg line-clamp-1">{news.title}</div> */}
@@ -118,7 +118,7 @@ const Home = () => {
               labelClassName="text-slate-900"
             />
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 py-2">
             {recommendationData.map((recommendation) => (
               <div key={recommendation.id}>
                 <Link
@@ -128,9 +128,9 @@ const Home = () => {
                     <Image
                       src={recommendation.image_url}
                       width={400}
-                      height={360}
+                      height={0}
                       alt="Recommendation"
-                      className="rounded-tl-xl rounded-tr-xl"
+                      className="w-full rounded-tl-xl rounded-tr-xl"
                     />
                     <div className="p-4">
                       <div className="text-lg font-bold line-clamp-1">{recommendation.title}</div>
@@ -163,7 +163,7 @@ const Home = () => {
               labelClassName="text-slate-900"
             />
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 py-2">
             {eventData.map((event) => (
               <div key={event.id}>
                 <Link
@@ -173,9 +173,9 @@ const Home = () => {
                     <Image
                       src={event.image_url}
                       width={400}
-                      height={360}
+                      height={0}
                       alt="event"
-                      className="rounded-tl-xl rounded-tr-xl"
+                      className="w-full rounded-tl-xl rounded-tr-xl"
                     />
                     <div className="p-4">
                       <div className="text-[16px] font-bold line-clamp-1">{event.title}</div>

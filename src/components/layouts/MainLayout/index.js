@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Footer from "@/components/molecules/Footer";
 import Navigation from "@/components/molecules/Navigation";
+import MobileNavbar from "@/components/molecules/MobileNavbar";
 
 const MainLayout = ({ children }) => {
   const [isTopTeamsList, setTopTeamsList] = useState(true)
@@ -15,6 +16,7 @@ const MainLayout = ({ children }) => {
         {children}
       </div>
       <Footer />
+      <MobileNavbar />
     </div>
   )
 }

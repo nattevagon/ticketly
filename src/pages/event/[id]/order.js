@@ -13,6 +13,7 @@ import TextField from "@/components/atoms/TextField";
 import { useRouter } from "next/router";
 import Toggle from "@/components/atoms/Toggle";
 import dynamic from "next/dynamic";
+import MobileButtonArea from "@/components/molecules/MobileButtonArea";
 
 const OrderDetail = () => {
   const router = useRouter();
@@ -400,8 +401,8 @@ const OrderDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-secondary-white dark:bg-secondary-black p-4 rounded-xl">
-                <div className="flex flex-col gap-2 text-primary-black">
+              <MobileButtonArea className="w-full bg-secondary-white dark:bg-secondary-black p-4">
+                <div className="flex flex-col gap-4 text-primary-black">
                   <div className="flex items-center justify-between gap-2">
                     <div className="text-md text-primary-gray font-semibold">
                       Payment Total
@@ -410,15 +411,15 @@ const OrderDetail = () => {
                       IDR 1.050.000
                     </div>
                   </div>
+                  <div className="w-full">
+                    <Button
+                      href={`/event/${id}/method`}
+                      label="Book Now"
+                      className="bg-slate-900 rounded-xl"
+                    />
+                  </div>
                 </div>
-                <div className="mt-4">
-                  <Button
-                    href={`/event/${id}/method`}
-                    label="Book Now"
-                    className="bg-slate-900 rounded-xl w-full"
-                  />
-                </div>
-              </div>
+              </MobileButtonArea>
             </div>
           </div>
         </div>

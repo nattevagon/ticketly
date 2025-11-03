@@ -11,6 +11,7 @@ import Button from "@/components/atoms/Button";
 import PaymentStep from "@/components/molecules/PaymentStep";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
+import MobileButtonArea from "@/components/molecules/MobileButtonArea";
 
 const tickets = [
   {
@@ -310,7 +311,7 @@ const Ticket = () => {
                   </div>
                 </div>
               )}
-              <div className="w-full bg-secondary-white dark:bg-secondary-black p-4 rounded-xl">
+              <MobileButtonArea className="w-full bg-secondary-white dark:bg-secondary-black p-4">
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-md text-primary-black font-semibold">
                     {orderDetails.selected.length === 0 ?
@@ -335,7 +336,7 @@ const Ticket = () => {
                     disabled={orderDetails.selected.length === 0}
                   />
                 </div>
-              </div>
+              </MobileButtonArea>
             </div>
           </div>
         </div>

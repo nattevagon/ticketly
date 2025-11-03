@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import Toggle from "@/components/atoms/Toggle";
 import dynamic from "next/dynamic";
 import TimeRemaining from "@/components/molecules/TimeRemaining";
+import MobileButtonArea from "@/components/molecules/MobileButtonArea";
 
 const Payment = () => {
   const router = useRouter();
@@ -150,31 +151,33 @@ const Payment = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-secondary-white dark:bg-secondary-black p-4 rounded-xl">
-                <div className="flex flex-col gap-2 text-primary-black">
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="text-md text-primary-gray font-semibold">
-                      Payment Total
-                    </div>
-                    <div className="text-lg text-primary-black font-bold">
-                      IDR 1.050.000
+              <MobileButtonArea className="w-full bg-secondary-white dark:bg-secondary-black p-4">
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-2 text-primary-black">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="text-md text-primary-gray font-semibold">
+                        Payment Total
+                      </div>
+                      <div className="text-lg text-primary-black font-bold">
+                        IDR 1.050.000
+                      </div>
                     </div>
                   </div>
+                  <div className="flex flex-row-reverse lg:flex-col gap-4">
+                    <Button
+                      onClick={() => alert('pay now')}
+                      label="Pay Now"
+                      className="bg-slate-900 rounded-xl w-full"
+                    />
+                    <Button
+                      onClick={() => alert('cancel')}
+                      label="Cancel Order"
+                      className="bg-red-200 rounded-xl w-full"
+                      labelClassName="text-red-500"
+                    />
+                  </div>
                 </div>
-                <div className="flex flex-col gap-4 mt-4">
-                  <Button
-                    onClick={() => alert('pay now')}
-                    label="Pay Now"
-                    className="bg-slate-900 rounded-xl w-full"
-                  />
-                  <Button
-                    onClick={() => alert('cancel')}
-                    label="Cancel Order"
-                    className="bg-red-200 rounded-xl w-full"
-                    labelClassName="text-red-500"
-                  />
-                </div>
-              </div>
+              </MobileButtonArea>
             </div>
           </div>
         </div>

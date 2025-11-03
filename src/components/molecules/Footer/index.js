@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="container bg-gradient-to-r from-slate-900 to-slate-700 flex items-center py-8 m-0 w-full max-w-none">
+    <div id="basicFooter" className="container bg-gradient-to-r from-slate-900 to-slate-700 flex items-center py-8 m-0 w-full max-w-none">
       <footer className="footer text-primary-white p-4">
         <nav>
           <h6 className="footer-title">Services</h6>
