@@ -5,12 +5,13 @@ import React from "react";
 
 const MobileNavbar = () => {
   const router = useRouter();
-  const pathname = router.asPath; // ← gunakan asPath agar tetap mencakup URL dinamis
+  const pathname = router.pathname;
   const isEventDetail = pathname.startsWith("/event/") && pathname !== "/event";
 
   const handleActivePage = (href) => {
     if (!pathname) return false;
-    return pathname === href || pathname.startsWith(`${href}/`);
+    // console.log('pathname =>' + href + " = " + router.pathname);
+    return pathname === href;
   };
 
   const navItems = [
