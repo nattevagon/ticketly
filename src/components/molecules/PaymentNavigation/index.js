@@ -11,7 +11,7 @@ import Button from "@/components/atoms/Button";
 function PaymentNavigation() {
   return (
     <div className="w-full">
-      <div className="bg-gradient-to-r from-slate-900 to-slate-700 w-full h-[64px] flex items-center justify-center z-[2] fixed top-0">
+      <div className="bg-gradient-to-r from-slate-900 to-slate-700 w-full h-[64px] flex items-center justify-center z-[8] fixed top-0">
         <div className="container flex items-center justify-between">
           <div className="w-[138px] h-[auto]">
             <Link href="/">

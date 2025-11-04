@@ -22,7 +22,7 @@ const MobileNavbar = () => {
 
   if (!isEventDetail) {
     return (
-      <div className="fixed bottom-4 left-4 right-4 z-50 block md:hidden p-3 rounded-full bg-slate-700 shadow-lg shadow-primary/25 transition-all">
+      <div className="fixed bottom-4 left-4 right-4 z-5 block md:hidden p-3 rounded-full bg-slate-700 shadow-lg shadow-primary/25 transition-all">
         <div className="flex items-center justify-between">
           {navItems.map((item) => {
             const isActive = handleActivePage(item.href);
