@@ -23,7 +23,7 @@ const MobileNavbar = () => {
 
   if (!isEventDetail) {
     return (
-      <div className="fixed bottom-4 left-4 right-4 z-5 block md:hidden p-3 rounded-full bg-slate-700 shadow-lg shadow-primary/25 transition-all">
+      <div className="fixed bottom-4 left-4 right-4 !z-[5] block md:hidden p-3 rounded-full bg-slate-700 shadow-lg shadow-primary/25 transition-all">
         <div className="flex items-center justify-between">
           {navItems.map((item) => {
             const isActive = handleActivePage(item.href);
@@ -33,7 +33,7 @@ const MobileNavbar = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 ${isActive ? "bg-white text-slate-700" : "text-white"
+                className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 ${isActive ? "bg-primary-white text-slate-700" : "text-white"
                   }`}
               >
                 <Icon

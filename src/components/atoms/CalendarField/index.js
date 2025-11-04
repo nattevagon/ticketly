@@ -94,7 +94,7 @@ const CalendarField = ({ name, value, placeholder, onChange, baseClass, isTimePi
                 />
                 {showTimeDropdown && (
                   <div className="absolute bottom-full mb-0 flex border border-third-white dark:border-third-black shadow-lg
-                                  bg-third-white dark:bg-third-black max-h-40 overflow-y-auto z-20 p-2 w-full">
+                                  bg-third-white dark:bg-third-black max-h-40 overflow-y-auto z-[2] p-2 w-full">
                     {/* Hours */}
                     <ul className="w-full max-h-40 overflow-x-hidden overflow-y-auto">
                       {hours.map((h) => (

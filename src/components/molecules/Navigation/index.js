@@ -7,8 +7,25 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { TiketlyIcon } from "@/assets/images/logos";
 import Button from "@/components/atoms/Button";
+import { HomeIcon, MapIcon, TicketIcon, UserIcon } from "@heroicons/react/20/solid";
+import { useRouter } from "next/router";
 
 function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
+  const router = useRouter();
+  const pathname = router.pathname;
+
+  const handleActivePage = (href) => {
+    if (!pathname) return false;
+    // console.log('pathname =>' + href + " = " + router.pathname);
+    return pathname === href;
+  };
+
+  const navItems = [
+    { href: "/event", label: "Event", icon: MapIcon },
+    { href: "/transaction", label: "Transaction", icon: TicketIcon },
+    { href: "/profile", label: "Profile", icon: UserIcon },
+  ];
+
   useEffect(() => {
     const element = document.querySelector('#topTeamsList');
 
@@ -65,7 +82,27 @@ function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
             </Link>
           </div>
           <div className="hidden lg:flex items-center w-full justify-end">
-            <div className="flex items-center justify-between gap-2">
+            <div className="hidden lg:flex items-center justify-between gap-2">
+              {navItems.map((item) => {
+                const isActive = handleActivePage(item.href);
+                const Icon = item.icon;
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 ${isActive ? "bg-primary-white text-slate-700" : "text-white hover:bg-slate-600"
+                      }`}
+                  >
+                    <Icon
+                      className={`h-6 w-6 ${isActive ? "text-slate-700" : "text-white"
+                        }`}
+                    />
+                  </Link>
+                );
+              })}
+            </div>
+            {/* <div className="flex items-center justify-between gap-2">
               <Button
                 className="bg-slate-600 rounded-xl"
                 href={`/login`}
@@ -76,7 +113,7 @@ function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
                 href={`/register`}
                 label="Sign Up"
               />
-            </div>
+            </div> */}
           </div>
           <NavigationDrawer />
         </div>

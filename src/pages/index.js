@@ -91,6 +91,11 @@ const Home = () => {
               modules={[Autoplay, Scrollbar, A11y]}
               spaceBetween={32}
               slidesPerView={3}
+              breakpoints={{
+                0: { slidesPerView: 1 },
+                480: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+              }}
               loop={true}
               // autoplay={{
               //   delay: 2000, // Delay between slides in milliseconds
@@ -150,7 +155,7 @@ const Home = () => {
                 0: { slidesPerView: 1.4 },
                 480: { slidesPerView: 1.8 },
                 768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
+                1024: { slidesPerView: 3 }
               }}
             >
               {recommendationData.map((recommendation) => (
@@ -230,6 +235,13 @@ const Home = () => {
               </div>
             ))}
           </div>
+         <div className="mt-4 flex items-center justify-center">
+           <Button
+            onClick={() => alert('Expand')}
+            label="Show Others"
+            className="bg-slate-900 rounded-xl hover:opacity-80"
+          />
+         </div>
         </div>
       </div>
     </div>

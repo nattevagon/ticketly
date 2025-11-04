@@ -58,8 +58,8 @@ const DetailEvent = () => {
   }, [id])
 
   return (
-    <div className="container py-8">
-      <div className="mb-6">
+    <div className="container py-4 lg:py-8">
+      <div className="mb-4">
         <Breadcrumb
           isHome={true}
           title={detailData?.title}
