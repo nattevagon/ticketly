@@ -1,5 +1,6 @@
 import { TiketlyIcon } from "@/assets/images/logos"
 import Image from "next/image"
+import Link from "next/link"
 import React from 'react'
 
 const Footer = () => {
@@ -14,8 +15,18 @@ const Footer = () => {
           alt="LeagueLogo"
         />
       </div>
-      <div className="flex items-center justify-center border-t border-slate-600 text-sm p-4">
-        © 2025 Tiketly. Created By Natte Vagon
+      <div className="flex flex-col items-center justify-center border-t border-slate-600 p-4 space-y-2">
+        <div className="text-sm">
+          © 2025 Tiketly.
+        </div>
+        <div>
+          <div className="text-xs">
+            Created By <Link className="font-bold" href="https://www.linkedin.com/in/nattevagon">Natte Vagon</Link> & Image Assets by <Link className="font-bold" href="https://artatix.co.id/">Artatix</Link>.
+          </div>
+          <div className="text-xs">
+            Just for <Link className="font-semibold" href="https://nattevagon.netlify.app/">my portfolio </Link>not for real web, peace guys.
+          </div>
+        </div>
       </div>
     </div>
   )

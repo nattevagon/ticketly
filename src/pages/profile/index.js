@@ -11,11 +11,11 @@ const Profile = () => {
   const profile = {
     name: "Natte Vagon",
     role: "Frontend Engineer",
-    username: "xiofikhasan",
+    username: "nattevagon",
     email: "nattevagon@example.com",
     phone: "+62 896-6634-2843",
     location: "Sleman, Yogyakarta Special Region",
-    birthday: "19 October 2000",
+    birthday: "17 August 1999",
     image:
       "https://nattevagon.netlify.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpersonal-photo.48d40ed4.jpg&w=1920&q=75",
   };
