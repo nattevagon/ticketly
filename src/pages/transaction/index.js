@@ -9,7 +9,7 @@ const Transaction = () => {
     {
       id: 1,
       eventName: "We The Fest 2025",
-      image_url: "https://assets.artatix.co.id/event/68a1729e3507b-WebBannerBYF4.png",
+      image_url: "https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2FT8MAX5XR28.png&w=1600&q=50",
       promotor_name: "Ismaya Live",
       promotor_logo: "https://assets.artatix.co.id/user/CGGXI0XDXF.png",
       startTime: "14:00",
@@ -29,7 +29,7 @@ const Transaction = () => {
     {
       id: 2,
       eventName: "Java Jazz Festival",
-      image_url: "https://assets.artatix.co.id/event/68a1729e3507b-WebBannerBYF4.png",
+      image_url: "https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2FT8MAX5XR28.png&w=1600&q=50",
       promotor_name: "Java Festival Production",
       promotor_logo: "https://assets.artatix.co.id/user/CGGXI0XDXF.png",
       startTime: "13:00",
