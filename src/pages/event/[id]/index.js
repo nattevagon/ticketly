@@ -69,7 +69,7 @@ const DetailEvent = () => {
         <div className="col-span-1 lg:col-span-2 w-full flex flex-col order-1 lg:order-1">
           <div className="bg-secondary-white dark:bg-secondary-black rounded-xl">
             {/* <Image
-              src="https://assets.artatix.co.id/event/68a1729e3507b-WebBannerBYF4.png"
+              src="https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2FT8MAX5XR28.png&w=1600&q=50"
               alt="BannerItem"
               width={1000}
               height={600}
@@ -87,7 +87,7 @@ const DetailEvent = () => {
             >
               <SwiperSlide>
                 <Image
-                  src="https://assets.artatix.co.id/event/68a1729e3507b-WebBannerBYF4.png"
+                  src="https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2FT8MAX5XR28.png&w=1600&q=50"
                   alt="BannerItem"
                   width={600}
                   height={0}

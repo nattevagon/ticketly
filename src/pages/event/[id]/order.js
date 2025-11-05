@@ -358,7 +358,7 @@ const OrderDetail = () => {
                 >
                   <SwiperSlide>
                     <Image
-                      src="https://assets.artatix.co.id/event/68a1729e3507b-WebBannerBYF4.png"
+                      src="https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2FT8MAX5XR28.png&w=1600&q=50"
                       alt="BannerItem"
                       width={600}
                       height={0}

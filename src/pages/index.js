@@ -26,7 +26,7 @@ const Home = () => {
     id: 4, title: "Sample Event 4", permalink: "sample-event-4", image_url: "https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2FHHUKVSN5C4.png&w=1600&q=50"
   }]);
   const [recommendationData, setRecommendationData] = useState([{
-    id: 1, title: "Buzz Youth Fest #4", permalink: "buzz-youth-fest-4", image_url: "https://assets.artatix.co.id/event/68a1729e3507b-WebBannerBYF4.png", promotor_name: "Carnaval of Screams", promotor_logo: "https://assets.artatix.co.id/user/CGGXI0XDXF.png"
+    id: 1, title: "Buzz Youth Fest #4", permalink: "buzz-youth-fest-4", image_url: "https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2FT8MAX5XR28.png&w=1600&q=50", promotor_name: "Carnaval of Screams", promotor_logo: "https://assets.artatix.co.id/user/CGGXI0XDXF.png"
   }, {
     id: 2, title: "Doomsday", permalink: "doomsday-1", image_url: "https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2F6872810b6464a-headerartatixcopy2.jpg&w=1600&q=50", promotor_name: "Carnaval of Screams", promotor_logo: "https://assets.artatix.co.id/user/CGGXI0XDXF.png"
   }, {
@@ -37,7 +37,7 @@ const Home = () => {
     id: 5, title: "Panggung Raya 2025", permalink: "panggung-raya-2025", image_url: "https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2F78NTAPXB1R.png&w=640&q=25", promotor_name: "Carnaval of Screams", promotor_logo: "https://assets.artatix.co.id/user/CGGXI0XDXF.png"
   }]);
   const [eventData, setEventData] = useState([{
-    id: 1, title: "Buzz Youth Fest #4", permalink: "buzz-youth-fest-4", image_url: "https://assets.artatix.co.id/event/68a1729e3507b-WebBannerBYF4.png", promotor_name: "Carnaval of Screams", promotor_logo: "https://assets.artatix.co.id/user/CGGXI0XDXF.png"
+    id: 1, title: "Buzz Youth Fest #4", permalink: "buzz-youth-fest-4", image_url: "https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2FT8MAX5XR28.png&w=1600&q=50", promotor_name: "Carnaval of Screams", promotor_logo: "https://assets.artatix.co.id/user/CGGXI0XDXF.png"
   }, {
     id: 2, title: "Doomsday", permalink: "doomsday-1", image_url: "https://artatix.co.id/_next/image?url=https%3A%2F%2Fassets.artatix.co.id%2Fevent%2F6872810b6464a-headerartatixcopy2.jpg&w=1600&q=50", promotor_name: "Carnaval of Screams", promotor_logo: "https://assets.artatix.co.id/user/CGGXI0XDXF.png"
   }, {
