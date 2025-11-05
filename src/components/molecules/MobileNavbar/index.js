@@ -10,8 +10,8 @@ const MobileNavbar = () => {
 
   const handleActivePage = (href) => {
     if (!pathname) return false;
-    // console.log('pathname =>' + href + " = " + router.pathname);
-    return pathname === href;
+    console.log('pathname =>', pathname.split("/").slice(0, 2).join("/"));
+    return (pathname === href || pathname.split("/").slice(0, 2).join("/") === href);
   };
 
   const navItems = [

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { MusicalNoteIcon } from "@heroicons/react/20/solid";
+import { MusicalNoteIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { Books, Camping, CircusTent, Loudspeaker, MusicalNotes, PlayingBasketball, TokyoTower, VideoGame } from "@/assets/images/icons";

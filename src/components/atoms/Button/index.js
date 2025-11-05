@@ -13,7 +13,7 @@ const Button = ({ href, onClick, icon: Icon, label, disabled, className = "", la
 
   if (href && !disabled) {
     return (
-      <Link href={href} className="hover:opacity-75 size-fit cursor-pointer disabled:opacity-75 disabled:cursor-wait !no-underline">
+      <Link href={href} className={"hover:opacity-75 cursor-pointer disabled:opacity-75 disabled:cursor-wait !no-underline" + (className ? " " + className : "")}>
         {content}
       </Link>
     );

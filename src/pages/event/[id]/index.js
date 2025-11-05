@@ -4,7 +4,7 @@ import Breadcrumb from "@/components/atoms/Breadcrumb";
 import Button from "@/components/atoms/Button";
 import PostRender from "@/components/molecules/PostRender"
 import { Services } from "@/service";
-import { CalendarDaysIcon, ClockIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import { CalendarDaysIcon, ClockIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,7 +62,7 @@ const DetailEvent = () => {
       <div className="mb-4">
         <Breadcrumb
           isHome={true}
-          title={detailData?.title}
+          title={"Ticket"}
         />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">

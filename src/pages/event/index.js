@@ -2,7 +2,7 @@ import Breadcrumb from "@/components/atoms/Breadcrumb";
 import Button from "@/components/atoms/Button";
 import CheckboxField from "@/components/atoms/CheckboxField";
 import { DropdownButton, DropdownContent, DropdownItem, DropdownMenu } from "@/components/molecules/DropdownMenu";
-import { ChevronDownIcon, FunnelIcon } from "@heroicons/react/20/solid";
+import { ChevronDownIcon, FunnelIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from 'react'

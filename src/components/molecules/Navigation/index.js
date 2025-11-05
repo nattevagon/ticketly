@@ -17,7 +17,7 @@ function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
   const handleActivePage = (href) => {
     if (!pathname) return false;
     // console.log('pathname =>' + href + " = " + router.pathname);
-    return pathname === href;
+    return (pathname === href || pathname.split("/").slice(0, 2).join("/") === href);
   };
 
   const navItems = [
@@ -48,7 +48,7 @@ function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
     <div className="w-full">
       <div id="topTeamsList" className="bg-slate-700 w-full">
         <div className="container">
-          <div className="hidden lg:flex text-primary-white py-2 text-[12px] items-center justify-center gap-4">
+          <div className="hidden md:flex text-primary-white py-2 text-[12px] items-center justify-center gap-4">
             <Link
               href={'/about'}
             >
@@ -81,8 +81,8 @@ function Navigation({ isTopTeamsList, onSetTopTeamsList }) {
               />
             </Link>
           </div>
-          <div className="hidden lg:flex items-center w-full justify-end">
-            <div className="hidden lg:flex items-center justify-between gap-2">
+          <div className="hidden md:flex items-center w-full justify-end">
+            <div className="hidden md:flex items-center justify-between gap-2">
               {navItems.map((item) => {
                 const isActive = handleActivePage(item.href);
                 const Icon = item.icon;

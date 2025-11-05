@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import PaymentLayout from "@/components/layouts/PaymentLayout";
-import { CalendarDaysIcon, ChevronDoubleRightIcon, ChevronRightIcon, ClockIcon, MapPinIcon, ShoppingBagIcon } from "@heroicons/react/20/solid";
+import { CalendarDaysIcon, ChevronDoubleRightIcon, ChevronRightIcon, ClockIcon, MapPinIcon, ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';

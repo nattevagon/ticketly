@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Image from "next/image";
 import Video from "@/components/atoms/Video";
-import { ClockIcon, PlayIcon, TvIcon } from "@heroicons/react/20/solid";
+import { ClockIcon, PlayIcon, TvIcon } from "@heroicons/react/24/outline";
 import { TagIcon } from "@heroicons/react/24/solid";
 
 const HomeBanner = () => {
